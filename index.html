@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator with text box and increment-decrement button</title>
+</head>
+<body>
+    
+        <input type="button" value="&uArr;" onclick="number1_incress()">
+        <input type="number" name="number_1" id="number1" >
+        <input type="button" value="&dArr;" onclick="number1_decrease()">
+        <select name="operation" id="operation_1" onchange="calculats();" >
+        <optgroup label="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </optgroup>
+        </select>
+        <input type="button" value="&uArr;" onclick="number2_incress()">
+        <input type="number"name="number_2" id="number2" >
+        <input type="button" value="&dArr;" onclick="number2_decrease()">
+        <input type="button" value="&equals;" onclick="calculats()">
+        <input type="number" name="results" id="resu">
+
+
+    
+  
+    <script >
+        function number1_incress(){
+            document.getElementById("number1").value=(Number((document.getElementById("number1").value))+1)            
+        } 
+        function number2_incress(){
+            document.getElementById("number2").value=(Number((document.getElementById("number2").value))+1)
+        } 
+        function number1_decrease(){
+            document.getElementById("number1").value=(Number((document.getElementById("number1").value))-1)            
+        } 
+        function number2_decrease(){
+            document.getElementById("number2").value=(Number((document.getElementById("number2").value))-1)            
+        } 
+
+
+
+        function calculats()
+        {
+            var num1 ,num2, res;
+            switch( document.getElementById("operation_1").value){
+                
+                case "+" :
+                    num1=Number(document.getElementById("number1").value);
+                    num2=Number(document.getElementById("number2").value);
+                    res=num1+num2;
+                    document.getElementById("resu").value=res;
+                    break;
+                case "-" :
+                    num1=Number(document.getElementById("number1").value);
+                    num2=Number(document.getElementById("number2").value);
+                    res=num1-num2;
+                    document.getElementById("resu").value=res;
+                    break;
+                case "*" :
+                    num1=Number(document.getElementById("number1").value);
+                    num2=Number(document.getElementById("number2").value);
+                    res=num1*num2;
+                    document.getElementById("resu").value=res;
+                    break;
+                case "/" :
+                    num1=Number(document.getElementById("number1").value);
+                    num2=Number(document.getElementById("number2").value);
+                    res=num1/num2;
+                    document.getElementById("resu").value=res;
+                    break;
+
+
+            }
+                    
+                    
+                   
+                    
+            
+
+        }
+    </script>
+
+</body>
+</html>
